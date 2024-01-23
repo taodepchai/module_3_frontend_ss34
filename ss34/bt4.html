@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .change{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<p id="display_text">text1</p>
+<button onclick="change_text()">change text</button>
+
+<script>
+    function change_text() {
+        let change = document.getElementById("display_text");
+        change.classList.toggle("change");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+        table,tr,th,td {
+            border: 1px solid black;
+        }
+    </style>
+
+    </head>
+    <body>
+        <table id="table">
+            <tr id="row">
+                <th>1 row 1</th>
+                <th>2 row 1</th>
+                <th>3 row 1</th>
+            </tr>
+        </table>
+        <button onclick="add_row()">add row</button>
+        <script>
+        function add_row() {
+            let table=document.getElementById("table");
+            let row= table.insertRow(1);
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
+            let cell3 = row.insertCell(2);
+            
+            cell1.innerHTML = "1";
+            cell2.innerHTML = "2";
+            cell3.innerHTML = "3";
+        }
+    </script>
+    </body>
+</html>

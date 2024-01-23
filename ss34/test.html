@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form onsubmit="add_item(event)">
+      <input type="text" placeholder="add item" id="add_item_input" />
+      <input type="submit" value="submit" />
+    </form>
+    <script>
+      let arr = ["list1", "list2", "list3"];
+      function add_item(event) {
+        event.preventDefault();
+        let add = document.getElementById("add_item_input").value;
+        arr.push(add);
+      }
+      for (let i=0;i<arr.length;i++){
+        document.write(a[i]+'<br>');
+      }
+    </script>
+  </body>
+</html>

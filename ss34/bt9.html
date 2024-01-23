@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bt9</title>
+    <style>
+      body > ul li {
+        display: inline;
+        margin-left: -30px;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="info" type="text" />
+    <button onclick="change()">edit item</button>
+
+    <ul id="list">
+      <li id="li_element1">
+        <span>Nguyễn Văn A</span> <button onclick="edit_item(1)">edit</button>
+      </li>
+      <br />
+      <li id="li_element2">
+        <span>Vũ Thị B</span> <button onclick="edit_item(2)">edit</button>
+      </li>
+      <br />
+      <li id="li_element3">
+        <span>Nguyễn Minh C</span> <button onclick="edit_item(3)">edit</button>
+      </li>
+    </ul>
+    <script>
+      function change() {
+        let selected_item = document.querySelector("ul li.active span");
+        if (selected_item) {
+          selected_item.textContent = document.getElementById("info").value;
+          selected_item.parentElement.classList.remove("active");
+          document.getElementById("info").value = "";
+        }
+      }
+      function edit_item(row) {
+        let list = document.getElementById("list");
+        switch (row) {
+          case 1:
+            remove_active();
+            make_active("li_element1");
+            break;
+          case 2:
+            remove_active();
+            make_active("li_element2");
+            break;
+          case 3:
+            remove_active();
+            make_active("li_element3");
+            break;
+          default:
+            break;
+        }
+      }
+      function remove_active() {
+        let element1 = document.getElementById("li_element1");
+        let element2 = document.getElementById("li_element2");
+        let element3 = document.getElementById("li_element3");
+        element1.classList.remove("active");
+        element2.classList.remove("active");
+        element3.classList.remove("active");
+      }
+      function make_active(item_id) {
+        let item = document.getElementById(item_id);
+        item.classList.add("active");
+        let input = document.getElementById("info");
+        input.value = item.querySelector("span").textContent;
+      }
+    </script>
+  </body>
+</html>
